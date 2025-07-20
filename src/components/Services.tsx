@@ -12,6 +12,7 @@ import {
   Settings,
   BarChart3
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import softwareImage from '@/assets/software-dev.jpg';
 import engineeringImage from '@/assets/engineering.jpg';
 import tradingImage from '@/assets/trading.jpg';
@@ -155,10 +156,12 @@ const Services = () => {
                   </div>
                 </div>
                 
-                <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  Explore Courses
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link to={`/${service.id === 'software' ? 'software-development' : service.id}`}>
+                  <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    Explore Courses
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

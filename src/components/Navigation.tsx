@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Engineering', href: '#engineering' },
-    { name: 'Software Development', href: '#software' },
-    { name: 'Trading', href: '#trading' },
-    { name: 'Android Apps', href: '#apps' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Engineering', href: '/engineering' },
+    { name: 'Software Development', href: '/software-development' },
+    { name: 'Trading', href: '/trading' },
+    { name: 'Android Apps', href: '/android-apps' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -28,13 +29,13 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -56,14 +57,14 @@ const Navigation = () => {
           <div className="md:hidden animate-slide-up">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

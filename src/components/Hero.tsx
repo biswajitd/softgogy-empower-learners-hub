@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Heart, Users, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-education.jpg';
 
 const Hero = () => {
@@ -37,17 +38,21 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-float">
-                Start Learning Free
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-              >
-                Explore Courses
-              </Button>
+              <Link to="/enrollment">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-float">
+                  Enroll Now - It's Free!
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/courses">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                >
+                  Explore All Courses
+                </Button>
+              </Link>
             </div>
 
             {/* Stats */}

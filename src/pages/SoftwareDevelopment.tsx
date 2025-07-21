@@ -140,10 +140,12 @@ const SoftwareDevelopment = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full">
-                    Start Track
-                    <Code className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link to="/enrollment">
+                    <Button className="w-full">
+                      Enroll Now - It's Free!
+                      <Code className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -177,9 +179,9 @@ const SoftwareDevelopment = () => {
           <p className="text-lg mb-6 text-white/90">
             Join our community of developers and build the future with code
           </p>
-          <Link to="/enroll">
+          <Link to="/enrollment">
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary">
-              Begin Learning - Free Forever!
+              Enroll Now - It's Free!
             </Button>
           </Link>
         </div>

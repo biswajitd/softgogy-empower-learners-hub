@@ -160,10 +160,12 @@ const Trading = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full">
-                    Start Trading Course
-                    <TrendingUp className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link to="/enrollment">
+                    <Button className="w-full">
+                      Enroll Now - It's Free!
+                      <TrendingUp className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

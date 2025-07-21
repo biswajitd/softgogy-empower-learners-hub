@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Link } from 'react-router-dom';
 import { 
   Mail, 
   Phone, 
@@ -19,19 +20,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'support@softgogy.com',
+      details: 'biswajit@softgogy.com',
       subtitle: 'Get answers within 24 hours'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+91 98765 43210',
+      details: '+91 98300 46647',
       subtitle: 'Mon-Fri: 9 AM - 6 PM IST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'Bangalore, Karnataka, India',
+      details: 'Kolkata, India',
       subtitle: 'Serving students across India'
     },
     {
@@ -192,19 +193,23 @@ const Contact = () => {
                 No hidden fees, no barriers - just quality education for everyone.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                >
-                  Start Learning Now
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                >
-                  Browse All Courses
-                </Button>
+                <Link to="/enrollment">
+                  <Button 
+                    size="lg" 
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  >
+                    Enroll Now - It's Free!
+                  </Button>
+                </Link>
+                <Link to="/courses">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  >
+                    Explore All Courses
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

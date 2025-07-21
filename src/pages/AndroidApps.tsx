@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Smartphone, Download, Code, Star, Users, PlayCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Smartphone, Download, Code, Star, Users, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AndroidApps = () => {
@@ -150,16 +150,12 @@ const AndroidApps = () => {
                     </div>
                   </div>
                   
-                  <div className="flex space-x-3">
-                    <Button className="flex-1">
-                      <Download className="mr-2 h-4 w-4" />
-                      Download APK
+                  <Link to="/enrollment">
+                    <Button className="w-full">
+                      Enroll Now - It's Free!
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                    <Button variant="outline" className="flex-1">
-                      <Code className="mr-2 h-4 w-4" />
-                      View Code
-                    </Button>
-                  </div>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -191,10 +187,12 @@ const AndroidApps = () => {
                       <span className="text-sm text-muted-foreground">Free Access</span>
                     </div>
                   </div>
-                  <Button className="w-full">
-                    <PlayCircle className="mr-2 h-4 w-4" />
-                    Start Learning
-                  </Button>
+                  <Link to="/enrollment">
+                    <Button className="w-full">
+                      Enroll Now - It's Free!
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -214,7 +212,9 @@ const AndroidApps = () => {
                 <resource.icon className="h-12 w-12 text-accent mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">{resource.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{resource.desc}</p>
-                <Button variant="outline" size="sm">Access Resource</Button>
+                <Link to="/enrollment">
+                  <Button variant="outline" size="sm">Enroll Now - It's Free!</Button>
+                </Link>
               </Card>
             ))}
           </div>

@@ -156,9 +156,9 @@ const Services = () => {
                   </div>
                 </div>
                 
-                <Link to={`/${service.id === 'software' ? 'software-development' : service.id}`}>
+                <Link to="/enrollment">
                   <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    Explore Courses
+                    Enroll Now - It's Free!
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -187,9 +187,11 @@ const Services = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-colors">
-                  Learn More
-                </Button>
+                <Link to="/enrollment">
+                  <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-colors">
+                    Enroll Now - It's Free!
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

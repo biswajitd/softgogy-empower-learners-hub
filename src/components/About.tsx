@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   Heart, 
   Target, 
@@ -148,36 +149,72 @@ const About = () => {
               ))}
             </div>
 
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Join Our Community
-              <Users className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/community">
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                Join Our Community
+                <Users className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
 
           <div className="animate-fade-in">
-            <Card className="bg-gradient-card border-0 shadow-float">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <Star className="h-12 w-12 text-accent mx-auto mb-4" />
-                  <h4 className="text-xl font-bold text-foreground mb-2">Student Success Story</h4>
-                </div>
-                
-                <blockquote className="text-muted-foreground italic mb-4 text-center">
-                  "SoftGogy transformed my life. Coming from a small village, I never thought I could learn 
-                  software development for free. Today, I'm working as a full-stack developer at a leading tech company."
-                </blockquote>
-                
-                <div className="text-center">
-                  <div className="font-semibold text-foreground">Priya Sharma</div>
-                  <div className="text-sm text-muted-foreground">Software Developer, Bangalore</div>
-                  <div className="flex justify-center space-x-1 mt-2">
-                    {[1,2,3,4,5].map((star) => (
-                      <Star key={star} className="h-4 w-4 text-accent fill-current" />
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <h4 className="text-xl font-bold text-foreground mb-6 text-center">Student Success Stories</h4>
+            <div className="space-y-6">
+              {[
+                {
+                  name: "Priya Sharma",
+                  role: "Software Developer, Bangalore",
+                  quote: "SoftGogy transformed my life. Coming from a small village, I never thought I could learn software development for free. Today, I'm working as a full-stack developer at a leading tech company."
+                },
+                {
+                  name: "Rajesh Kumar",
+                  role: "Data Analyst, Mumbai",
+                  quote: "The Python and data science courses at SoftGogy opened doors I never knew existed. From being unemployed to landing my dream job in 6 months!"
+                },
+                {
+                  name: "Anita Devi",
+                  role: "Mobile App Developer, Pune",
+                  quote: "As a single mother from a rural area, free education seemed impossible. SoftGogy's Android development course changed everything for my family."
+                },
+                {
+                  name: "Vikram Singh",
+                  role: "Algorithmic Trader, Delhi",
+                  quote: "The trading strategies I learned here helped me achieve consistent profits. From losing savings to making money - incredible transformation!"
+                },
+                {
+                  name: "Sneha Patel",
+                  role: "Electrical Engineer, Ahmedabad",
+                  quote: "SoftGogy's electrical engineering courses helped me crack my GATE exam and secure admission in IIT. Free quality education that actually works!"
+                },
+                {
+                  name: "Mohammed Rafi",
+                  role: "Mechanical Design Engineer, Chennai",
+                  quote: "The CAD and mechanical design courses were exactly what I needed. Now working at a top automotive company thanks to SoftGogy!"
+                }
+              ].map((story, index) => (
+                <Card key={story.name} className="bg-gradient-card border-0 shadow-float">
+                  <CardContent className="p-6">
+                    <div className="text-center mb-4">
+                      <Star className="h-8 w-8 text-accent mx-auto mb-2" />
+                    </div>
+                    
+                    <blockquote className="text-muted-foreground italic mb-4 text-center text-sm">
+                      "{story.quote}"
+                    </blockquote>
+                    
+                    <div className="text-center">
+                      <div className="font-semibold text-foreground">{story.name}</div>
+                      <div className="text-sm text-muted-foreground">{story.role}</div>
+                      <div className="flex justify-center space-x-1 mt-2">
+                        {[1,2,3,4,5].map((star) => (
+                          <Star key={star} className="h-3 w-3 text-accent fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>

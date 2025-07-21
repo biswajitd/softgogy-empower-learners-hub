@@ -11,6 +11,7 @@ import Trading from "./pages/Trading";
 import AndroidApps from "./pages/AndroidApps";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import EnrollmentForm from "./pages/EnrollmentForm";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/android-apps" element={<AndroidApps />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/enroll" element={<EnrollmentForm />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

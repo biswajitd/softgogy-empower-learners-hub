@@ -177,9 +177,11 @@ const SoftwareDevelopment = () => {
           <p className="text-lg mb-6 text-white/90">
             Join our community of developers and build the future with code
           </p>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary">
-            Begin Learning - Free Forever!
-          </Button>
+          <Link to="/enroll">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary">
+              Begin Learning - Free Forever!
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

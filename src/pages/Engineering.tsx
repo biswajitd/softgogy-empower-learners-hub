@@ -134,9 +134,11 @@ const Engineering = () => {
           <p className="text-lg mb-6 text-white/90">
             Join thousands of students already learning with SoftGogy's free engineering courses
           </p>
-          <Button size="lg" variant="secondary">
-            Enroll Now - It's Free!
-          </Button>
+          <Link to="/enroll">
+            <Button size="lg" variant="secondary">
+              Enroll Now - It's Free!
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { ArrowLeft, UserPlus } from 'lucide-react';
@@ -16,6 +17,8 @@ const enrollmentSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   contact: z.string().min(10, 'Contact number must be at least 10 digits'),
   address: z.string().min(10, 'Address must be at least 10 characters'),
+  chosenCourse: z.string().min(1, 'Please select a course'),
+  educationDetails: z.string().min(10, 'Education details must be at least 10 characters').max(2400, 'Education details must not exceed 400 words'),
 });
 
 type EnrollmentFormData = z.infer<typeof enrollmentSchema>;
@@ -31,6 +34,8 @@ const EnrollmentForm = () => {
       email: '',
       contact: '',
       address: '',
+      chosenCourse: '',
+      educationDetails: '',
     },
   });
 
@@ -156,7 +161,52 @@ const EnrollmentForm = () => {
                   )}
                 />
 
-                <Button 
+                <FormField
+                  control={form.control}
+                  name="chosenCourse"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Chosen Course</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a course" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="engineering-ece">Engineering - Electronics & Communication</SelectItem>
+                          <SelectItem value="engineering-epe">Engineering - Electrical & Power</SelectItem>
+                          <SelectItem value="engineering-mpe">Engineering - Mechanical & Production</SelectItem>
+                          <SelectItem value="engineering-cse">Engineering - Computer Science</SelectItem>
+                          <SelectItem value="software-development">Software Development</SelectItem>
+                          <SelectItem value="trading">Trading & Algo Trading</SelectItem>
+                          <SelectItem value="android-apps">Android App Development</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="educationDetails"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Your Education Details (Max 400 words)</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder="Please describe your educational background, current studies, qualifications, and any relevant experience..."
+                          className="min-h-[120px]"
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
                   type="submit" 
                   className="w-full" 
                   size="lg"

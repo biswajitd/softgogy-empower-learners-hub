@@ -226,9 +226,11 @@ const AndroidApps = () => {
           <p className="text-lg mb-6 text-white/90">
             Join our comprehensive Android development course and create amazing mobile applications
           </p>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-accent">
-            Start Android Development Course
-          </Button>
+          <Link to="/enrollment">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-accent">
+              Enroll Now - It's Free!
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

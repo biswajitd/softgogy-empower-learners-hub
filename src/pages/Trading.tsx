@@ -206,9 +206,11 @@ const Trading = () => {
           <p className="text-lg mb-6 text-white/90">
             Start with our free trading simulator and educational resources
           </p>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-            Start Free Trading Education
-          </Button>
+          <Link to="/enrollment">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              Enroll Now - It's Free!
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -118,10 +118,12 @@ const Engineering = () => {
                       <div className="text-sm font-medium">{branch.students} Students</div>
                     </div>
                   </div>
-                  <Button className="w-full">
-                    Start Learning
-                    <Award className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link to="/enrollment">
+                    <Button className="w-full">
+                      Start Learning
+                      <Award className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

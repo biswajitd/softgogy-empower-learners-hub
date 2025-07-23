@@ -287,10 +287,12 @@ const Courses = () => {
                           <Zap className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>
-                      <Button variant="outline" className="w-full" size="sm">
-                        <Download className="mr-2 h-4 w-4" />
-                        Download Syllabus
-                      </Button>
+                      <Link to={`/syllabus-download?course=${category.id}`}>
+                        <Button variant="outline" className="w-full" size="sm">
+                          <Download className="mr-2 h-4 w-4" />
+                          Download Syllabus
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -298,7 +300,11 @@ const Courses = () => {
             </div>
 
             <div className="text-center">
-              <Link to={`/${category.id === 'software' ? 'software-development' : category.id}`}>
+              <Link to={`/${
+                category.id === 'software' ? 'software-development' : 
+                category.id === 'android' ? 'android-projects' : 
+                category.id
+              }`}>
                 <Button variant="outline" size="lg">
                   View All {category.title}
                   <BookOpen className="ml-2 h-5 w-5" />

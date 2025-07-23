@@ -48,7 +48,7 @@ const Hero = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                onClick={() => alert("Under development")}
+                onClick={() => alert("🚧 Under Development 🚧")}
               >
                 Start Chart
               </Button>

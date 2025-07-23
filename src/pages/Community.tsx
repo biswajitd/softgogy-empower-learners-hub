@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,6 +22,22 @@ import {
 import { Link } from 'react-router-dom';
 
 const Community = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    interests: '',
+    experience: '',
+    goals: ''
+  });
+
+  const handleFormSubmit = () => {
+    if (!formData.fullName || !formData.email) {
+      alert("Please fill all required fields!");
+      return;
+    }
+    alert("Succeeded, we will contact you soon.");
+    setFormData({ fullName: '', email: '', interests: '', experience: '', goals: '' });
+  };
   const communityStats = [
     { number: "5,000+", label: "Active Members", icon: Users },
     { number: "500+", label: "Daily Discussions", icon: MessageCircle },
@@ -190,23 +207,44 @@ const Community = () => {
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="fullName">Full Name</Label>
-                  <Input id="fullName" placeholder="Enter your full name" />
+                  <Label htmlFor="fullName">Full Name *</Label>
+                  <Input 
+                    id="fullName" 
+                    placeholder="Enter your full name" 
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" type="email" placeholder="your@email.com" />
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="your@email.com" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="interests">Areas of Interest</Label>
-                <Input id="interests" placeholder="e.g., Software Development, Engineering, Trading" />
+                <Input 
+                  id="interests" 
+                  placeholder="e.g., Software Development, Engineering, Trading" 
+                  value={formData.interests}
+                  onChange={(e) => setFormData({...formData, interests: e.target.value})}
+                />
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="experience">Current Experience Level</Label>
-                <Input id="experience" placeholder="e.g., Beginner, Intermediate, Advanced" />
+                <Input 
+                  id="experience" 
+                  placeholder="e.g., Beginner, Intermediate, Advanced" 
+                  value={formData.experience}
+                  onChange={(e) => setFormData({...formData, experience: e.target.value})}
+                />
               </div>
               
               <div className="space-y-2">
@@ -215,15 +253,15 @@ const Community = () => {
                   id="goals" 
                   placeholder="Tell us what you hope to achieve through our community..."
                   className="min-h-[100px]"
+                  value={formData.goals}
+                  onChange={(e) => setFormData({...formData, goals: e.target.value})}
                 />
               </div>
               
               <Button 
                 className="w-full" 
                 size="lg"
-                onClick={() => {
-                  alert("Succeeded, we will contact you soon.");
-                }}
+                onClick={handleFormSubmit}
               >
                 Join Community Now
                 <Users className="ml-2 h-5 w-5" />

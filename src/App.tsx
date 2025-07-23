@@ -17,6 +17,8 @@ import Courses from "./pages/Courses";
 import ChannelDetails from "./pages/ChannelDetails";
 import EventDetails from "./pages/EventDetails";
 import AndroidDevelopment from "./pages/AndroidDevelopment";
+import AndroidProjects from "./pages/AndroidProjects";
+import SyllabusDownload from "./pages/SyllabusDownload";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +43,8 @@ const App = () => (
           <Route path="/channel-details" element={<ChannelDetails />} />
           <Route path="/event-details" element={<EventDetails />} />
           <Route path="/android-development" element={<AndroidDevelopment />} />
+          <Route path="/android-projects" element={<AndroidProjects />} />
+          <Route path="/syllabus-download" element={<SyllabusDownload />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

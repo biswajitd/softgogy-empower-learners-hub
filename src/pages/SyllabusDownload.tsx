@@ -74,6 +74,67 @@ const SyllabusDownload = () => {
         "Testing & Performance Optimization",
         "Google Play Store Deployment"
       ]
+    },
+    "android-development-fundamentals": {
+      title: "Android Development Fundamentals Syllabus",
+      duration: "8 Weeks",
+      modules: 8,
+      description: "Master the basics of Android app development with Java and comprehensive hands-on projects.",
+      topics: [
+        "Android Studio Setup & Project Structure",
+        "Activity & Fragment Lifecycle Management",
+        "XML Layout Design & UI Components",
+        "Event Handling & User Input Processing",
+        "Local Data Storage with SharedPreferences",
+        "Network Programming & REST API Integration",
+        "Unit Testing & Debugging Techniques",
+        "Google Play Store Publishing & Distribution"
+      ]
+    },
+    "advanced-android-development": {
+      title: "Advanced Android Development Syllabus",
+      duration: "10 Weeks",
+      modules: 10,
+      description: "Build complex enterprise-level Android applications with modern architecture patterns and advanced features.",
+      topics: [
+        "MVVM Architecture & Design Patterns",
+        "Room Database & SQLite Management",
+        "Dependency Injection with Dagger/Hilt",
+        "Custom Views & Advanced Animations",
+        "Background Services & WorkManager",
+        "Firebase Integration & Push Notifications",
+        "Camera2 API & Media Processing",
+        "Performance Optimization & Memory Management",
+        "Security Best Practices & Data Encryption",
+        "CI/CD Pipeline & Automated Testing"
+      ]
+    },
+    "kotlin-for-android-development": {
+      title: "Kotlin for Android Development Syllabus",
+      duration: "6 Weeks",
+      modules: 6,
+      description: "Modern Android development using Kotlin programming language with latest Jetpack libraries.",
+      topics: [
+        "Kotlin Fundamentals & Syntax Mastery",
+        "Object-Oriented Programming with Kotlin",
+        "Functional Programming & Lambda Expressions",
+        "Coroutines for Asynchronous Programming",
+        "Jetpack Compose for Modern UI Development",
+        "Kotlin Multiplatform Mobile (KMM) Basics"
+      ]
+    },
+    "android-ui/ux-design-mastery": {
+      title: "Android UI/UX Design Mastery Syllabus",
+      duration: "5 Weeks",
+      modules: 5,
+      description: "Create stunning and intuitive user interfaces following Material Design guidelines and modern UX principles.",
+      topics: [
+        "Material Design 3 Principles & Components",
+        "Responsive Layout Design & Screen Adaptation",
+        "Color Psychology & Typography in Mobile Design",
+        "Navigation Patterns & User Journey Optimization",
+        "Micro-interactions & Delightful Animations"
+      ]
     }
   };
 

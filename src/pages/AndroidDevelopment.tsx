@@ -336,6 +336,13 @@ const AndroidDevelopment = () => {
                           </Button>
                         </Link>
                         
+                        <Link to={`/syllabus-download?course=${course.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}>
+                          <Button variant="outline" className="w-full mb-3">
+                            <Download className="mr-2 h-4 w-4" />
+                            Download Syllabus
+                          </Button>
+                        </Link>
+                        
                         <div className="space-y-2 text-sm text-muted-foreground">
                           <div>✓ {course.modules.length} Comprehensive Modules</div>
                           <div>✓ {course.projects.length} Real-world Projects</div>

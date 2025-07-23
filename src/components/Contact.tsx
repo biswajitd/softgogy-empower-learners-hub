@@ -173,6 +173,7 @@ const Contact = () => {
                 <Button 
                   variant="outline" 
                   className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
+                  onClick={() => alert("🚧 Under Development 🚧")}
                 >
                   {channel.action}
                 </Button>

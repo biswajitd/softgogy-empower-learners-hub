@@ -141,40 +141,251 @@ const SyllabusDownload = () => {
   const currentSyllabus = syllabusData[course as keyof typeof syllabusData] || syllabusData.software;
 
   const handleDownload = () => {
-    // Create a mock PDF download
-    const pdfContent = `
-      ${currentSyllabus.title}
+    // Create detailed course-specific content
+    const getDetailedContent = () => {
+      const baseInfo = `
+${currentSyllabus.title}
+
+Course Overview:
+${currentSyllabus.description}
+
+Duration: ${currentSyllabus.duration}
+Total Modules: ${currentSyllabus.modules}
+
+Course Topics:
+${currentSyllabus.topics.map((topic, index) => `${index + 1}. ${topic}`).join('\n')}
+`;
+
+      let specificContent = '';
       
-      Course Overview:
-      ${currentSyllabus.description}
-      
-      Duration: ${currentSyllabus.duration}
-      Total Modules: ${currentSyllabus.modules}
-      
-      Course Topics:
-      ${currentSyllabus.topics.map((topic, index) => `${index + 1}. ${topic}`).join('\n')}
-      
-      Additional Benefits:
-      - 100% Free Education
-      - Industry Expert Mentors
-      - Hands-on Projects
-      - Career Placement Support
-      - Lifetime Course Access
-      - Certificate of Completion
-      
-      Contact Information:
-      Email: biswajit@softgogy.com
-      Phone: +91 98300 46647
-      Location: 399 Motilal Colony, Kolkata, India
-      
-      Visit: www.softgogy.com
+      switch(course) {
+        case 'engineering':
+          specificContent = `
+Prerequisites:
+- Basic Mathematics and Physics Knowledge
+- Class 12 Science Background
+- Interest in Problem-Solving
+
+Module Details:
+Module 1-4: Engineering Mathematics & Physics Fundamentals
+Module 5-8: Circuit Analysis & Design
+Module 9-12: Digital Electronics & Microprocessors
+Module 13-16: Control Systems & Automation
+Module 17-20: Project Management & Professional Skills
+Module 21-24: Industry-Ready Practical Training
+
+Career Opportunities:
+- Electronics Engineer
+- Control Systems Engineer
+- Design Engineer
+- Project Manager
+- Technical Consultant
+`;
+          break;
+        case 'software':
+          specificContent = `
+Prerequisites:
+- Basic Computer Knowledge
+- Problem-Solving Aptitude
+- No Prior Programming Experience Required
+
+Module Details:
+Module 1-4: Programming Fundamentals (Python, Java, JavaScript)
+Module 5-8: Web Development Frontend (HTML, CSS, React)
+Module 9-12: Backend Development (Node.js, Databases)
+Module 13-16: API Development & Integration
+Module 17-20: DevOps & Cloud Computing (AWS, Docker)
+
+Career Opportunities:
+- Full Stack Developer
+- Frontend Developer
+- Backend Developer
+- DevOps Engineer
+- Software Architect
+`;
+          break;
+        case 'trading':
+          specificContent = `
+Prerequisites:
+- Basic Mathematics
+- Interest in Financial Markets
+- Analytical Thinking
+
+Module Details:
+Module 1-3: Financial Markets & Instruments
+Module 4-6: Technical Analysis & Chart Patterns
+Module 7-9: Risk Management & Portfolio Theory
+Module 10-12: Algorithmic Trading Strategies
+Module 13-15: Fundamental Analysis & Economics
+Module 16: Trading Psychology & Discipline
+
+Career Opportunities:
+- Quantitative Trader
+- Risk Analyst
+- Portfolio Manager
+- Financial Advisor
+- Algorithmic Trading Developer
+`;
+          break;
+        case 'android':
+          specificContent = `
+Prerequisites:
+- Basic Programming Knowledge
+- Object-Oriented Programming Concepts
+- Mobile App Interest
+
+Module Details:
+Module 1-3: Java & Kotlin Programming
+Module 4-6: Android SDK & App Architecture
+Module 7-9: UI/UX Design & Material Design
+Module 10-12: Database & API Integration
+Module 13-15: Testing & Performance Optimization
+Module 16-18: Google Play Store Deployment
+
+Career Opportunities:
+- Android Developer
+- Mobile App Developer
+- UI/UX Designer
+- Mobile App Architect
+- Freelance App Developer
+`;
+          break;
+        case 'android-development-fundamentals':
+          specificContent = `
+Prerequisites:
+- Basic Java Programming Knowledge
+- Understanding of Object-Oriented Programming
+- Familiarity with XML
+
+Week-by-Week Breakdown:
+Week 1: Android Studio Setup & Project Structure
+Week 2: Activity & Fragment Lifecycle Management
+Week 3: XML Layout Design & UI Components
+Week 4: Event Handling & User Input Processing
+Week 5: Local Data Storage with SharedPreferences
+Week 6: Network Programming & REST API Integration
+Week 7: Unit Testing & Debugging Techniques
+Week 8: Google Play Store Publishing & Distribution
+
+Projects:
+- Calculator App
+- To-Do List App
+- Weather App with API Integration
+`;
+          break;
+        case 'advanced-android-development':
+          specificContent = `
+Prerequisites:
+- Strong Android Fundamentals
+- Experience with Android Studio
+- Understanding of Design Patterns
+
+Week-by-Week Breakdown:
+Week 1: MVVM Architecture & Design Patterns
+Week 2: Room Database & SQLite Management
+Week 3: Dependency Injection with Dagger/Hilt
+Week 4: Custom Views & Advanced Animations
+Week 5: Background Services & WorkManager
+Week 6: Firebase Integration & Push Notifications
+Week 7: Camera2 API & Media Processing
+Week 8: Performance Optimization & Memory Management
+Week 9: Security Best Practices & Data Encryption
+Week 10: CI/CD Pipeline & Automated Testing
+
+Advanced Projects:
+- E-commerce App with Payment Gateway
+- Social Media App with Real-time Chat
+- Location-based Service App
+`;
+          break;
+        case 'kotlin-for-android-development':
+          specificContent = `
+Prerequisites:
+- Basic Programming Knowledge
+- Familiarity with Android Development
+- Object-Oriented Programming Concepts
+
+Week-by-Week Breakdown:
+Week 1: Kotlin Fundamentals & Syntax Mastery
+Week 2: Object-Oriented Programming with Kotlin
+Week 3: Functional Programming & Lambda Expressions
+Week 4: Coroutines for Asynchronous Programming
+Week 5: Jetpack Compose for Modern UI Development
+Week 6: Kotlin Multiplatform Mobile (KMM) Basics
+
+Kotlin-Specific Projects:
+- Modern Android App with Jetpack Compose
+- Coroutines-based Network App
+- KMM Shared Business Logic
+`;
+          break;
+        case 'android-ui/ux-design-mastery':
+          specificContent = `
+Prerequisites:
+- Basic Design Principles Understanding
+- Android Development Fundamentals
+- Creative Problem-Solving Skills
+
+Week-by-Week Breakdown:
+Week 1: Material Design 3 Principles & Components
+Week 2: Responsive Layout Design & Screen Adaptation
+Week 3: Color Psychology & Typography in Mobile Design
+Week 4: Navigation Patterns & User Journey Optimization
+Week 5: Micro-interactions & Delightful Animations
+
+Design Projects:
+- E-commerce App UI Design
+- Banking App UX Flow
+- Social Media App Interface
+`;
+          break;
+        default:
+          specificContent = `
+Prerequisites:
+- Relevant foundational knowledge
+- Interest in the subject area
+- Commitment to learning
+
+This is a comprehensive course designed to provide practical skills and industry-relevant knowledge.
+`;
+      }
+
+      return baseInfo + specificContent;
+    };
+
+    const pdfContent = getDetailedContent() + `
+
+Additional Benefits:
+- 100% Free Education
+- Industry Expert Mentors
+- Hands-on Projects
+- Career Placement Support
+- Lifetime Course Access
+- Certificate of Completion
+- One-on-One Mentoring Sessions
+- Resume Building Assistance
+
+Assessment & Certification:
+- Weekly Assignments
+- Mid-Course Project
+- Final Capstone Project
+- Industry-Standard Certification
+
+Contact Information:
+Email: biswajit@softgogy.com
+Phone: +91 98300 46647
+Address: 397 Motilal Colony, Kolkata, 700081, India
+
+Visit: www.softgogy.com
+
+© 2024 SoftGoGy Education. All rights reserved.
     `;
 
     const blob = new Blob([pdfContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${course}-syllabus.txt`;
+    a.download = `${course}-detailed-syllabus.txt`;
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);

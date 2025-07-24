@@ -43,8 +43,11 @@ const EnrollmentForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate sending email - in real implementation, this would call your backend
+      // Simulate sending email to biswajit@softgogy.com with enrollment data
       await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // In real implementation, send data to biswajit@softgogy.com
+      console.log('Sending enrollment data to biswajit@softgogy.com:', data);
       
       // Show success message
       toast({

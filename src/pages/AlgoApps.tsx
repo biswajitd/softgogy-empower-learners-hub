@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Code, TrendingUp, Zap, Shield, Smartphone } from 'lucide-react';
+import { Download, Code, TrendingUp, Zap, Shield, Smartphone, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AlgoApps = () => {
   const platforms = [
@@ -50,11 +51,17 @@ const AlgoApps = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Revolutionary Algo Trading Software
           </h1>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
             Crafted with the innovative capabilities of Python and C#, and leveraging the powerful DotNet Framework 9, 
             this software offers outstanding performance specifically designed for Windows environments. Its rapid 
             automated live trading features guarantee unparalleled execution efficiency and scalping.
           </p>
+          <Link to="/">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+              <ArrowLeft className="mr-2 h-5 w-5" />
+              Back to Home
+            </Button>
+          </Link>
         </div>
       </section>
 

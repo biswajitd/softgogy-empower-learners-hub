@@ -52,14 +52,14 @@ const Contact = () => {
         from_email: email,
         subject: subject,
         message: message,
-        to_email: 'biswajit@softgogy.com'
+        to_email: 'biswajit.dvc@gmail.com'
       };
 
       await emailjs.send(
         'service_softgogy', // You'll need to configure this
         'template_contact', // You'll need to configure this
         templateParams,
-        'YOUR_PUBLIC_KEY' // You'll need to configure this
+        'Y1zfR0TDFuC7Dwnmt' // You'll need to configure this
       );
       
       toast({

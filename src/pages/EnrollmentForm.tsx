@@ -73,8 +73,8 @@ const EnrollmentForm = () => {
       form.reset();
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
+        title: "Succeded",
+        description: "We will contact you soon.",
         variant: "destructive",
       });
     } finally {

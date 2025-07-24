@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -43,16 +44,28 @@ const EnrollmentForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate sending email to biswajit@softgogy.com with enrollment data
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // In real implementation, send data to biswajit@softgogy.com
-      console.log('Sending enrollment data to biswajit@softgogy.com:', data);
+      // Send enrollment data to biswajit@softgogy.com using EmailJS
+      const templateParams = {
+        student_name: data.name,
+        student_email: data.email,
+        student_contact: data.contact,
+        student_address: data.address,
+        chosen_course: data.chosenCourse,
+        education_details: data.educationDetails,
+        to_email: 'biswajit@softgogy.com'
+      };
+
+      await emailjs.send(
+        'service_softgogy', // You'll need to configure this
+        'template_enrollment', // You'll need to configure this
+        templateParams,
+        'YOUR_PUBLIC_KEY' // You'll need to configure this
+      );
       
       // Show success message
       toast({
         title: "Enrollment Successful!",
-        description: "We will contact you soon.",
+        description: "Your enrollment has been submitted successfully! We will contact you soon.",
         variant: "default",
       });
       

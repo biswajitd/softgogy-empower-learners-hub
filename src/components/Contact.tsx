@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { 
   Mail, 
   Phone, 
@@ -45,12 +46,25 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate sending email to biswajit@softgogy.com
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: `${firstName} ${lastName}`,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: 'biswajit@softgogy.com'
+      };
+
+      await emailjs.send(
+        'service_softgogy', // You'll need to configure this
+        'template_contact', // You'll need to configure this
+        templateParams,
+        'YOUR_PUBLIC_KEY' // You'll need to configure this
+      );
       
       toast({
         title: "Success!",
-        description: "We will contact you soon",
+        description: "Message sent successfully! We will contact you soon.",
         variant: "default",
       });
       

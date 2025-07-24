@@ -19,6 +19,7 @@ import EventDetails from "./pages/EventDetails";
 import AndroidDevelopment from "./pages/AndroidDevelopment";
 import AndroidProjects from "./pages/AndroidProjects";
 import SyllabusDownload from "./pages/SyllabusDownload";
+import AlgoApps from "./pages/AlgoApps";
 
 const queryClient = new QueryClient();
 
@@ -32,9 +33,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/engineering" element={<Engineering />} />
           <Route path="/software-development" element={<SoftwareDevelopment />} />
-          <Route path="/trading" element={<Trading />} />
-          <Route path="/android-apps" element={<AndroidApps />} />
-          <Route path="/about" element={<About />} />
+            <Route path="/trading" element={<Trading />} />
+            <Route path="/algo-apps" element={<AlgoApps />} />
+            <Route path="/android-apps" element={<AndroidApps />} />
+            <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/enroll" element={<EnrollmentForm />} />
           <Route path="/enrollment" element={<EnrollmentForm />} />

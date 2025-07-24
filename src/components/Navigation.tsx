@@ -11,6 +11,7 @@ const Navigation = () => {
     { name: 'Engineering', href: '/engineering' },
     { name: 'Software Development', href: '/software-development' },
     { name: 'Trading', href: '/trading' },
+    { name: 'Algo Apps', href: '/algo-apps' },
     { name: 'Android Apps', href: '/android-apps' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },

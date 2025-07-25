@@ -48,23 +48,23 @@ const Contact = () => {
     try {
       // Send email using EmailJS
       const templateParams = {
-        from_name: `${firstName} ${lastName}`,
-        from_email: email,
+        name: `${firstName} ${lastName}`,
+        email: email,
         subject: subject,
         message: message,
         to_email: 'biswajit.dvc@gmail.com'
       };
 
       await emailjs.send(
-        'service_softgogy', // You'll need to configure this
-        'template_contact', // You'll need to configure this
+        'service_softgogy',
+        'template_w9ou0rt',
         templateParams,
-        'Y1zfR0TDFuC7Dwnmt' // You'll need to configure this
+        'Y1zfR0TDFuC7Dwnmt'
       );
       
       toast({
-        title: "Success!",
-        description: "Message sent successfully! We will contact you soon.",
+        title: "Succeeded!",
+        description: "We will contact you soon.",
         variant: "default",
       });
       

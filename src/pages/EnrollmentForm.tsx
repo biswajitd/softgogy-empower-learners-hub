@@ -46,26 +46,30 @@ const EnrollmentForm = () => {
     try {
       // Send enrollment data to biswajit@softgogy.com using EmailJS
       const templateParams = {
-        student_name: data.name,
-        student_email: data.email,
-        student_contact: data.contact,
-        student_address: data.address,
-        chosen_course: data.chosenCourse,
-        education_details: data.educationDetails,
-        to_email: 'biswajit@softgogy.com'
+        name: data.name,
+        email: data.email,
+        message: `Enrollment Form Submission:
+        
+Name: ${data.name}
+Email: ${data.email}
+Contact: ${data.contact}
+Address: ${data.address}
+Chosen Course: ${data.chosenCourse}
+Education Details: ${data.educationDetails}`,
+        to_email: 'biswajit.dvc@gmail.com'
       };
 
       await emailjs.send(
-        'service_softgogy', // You'll need to configure this
-        'template_enrollment', // You'll need to configure this
+        'service_softgogy',
+        'template_w9ou0rt',
         templateParams,
-        'YOUR_PUBLIC_KEY' // You'll need to configure this
+        'Y1zfR0TDFuC7Dwnmt'
       );
       
       // Show success message
       toast({
-        title: "Enrollment Successful!",
-        description: "Your enrollment has been submitted successfully! We will contact you soon.",
+        title: "Succeeded!",
+        description: "We will contact you soon.",
         variant: "default",
       });
       

@@ -12,7 +12,6 @@ const Navigation = () => {
     { name: 'Software Development', href: '/software-development' },
     { name: 'Trading', href: '/trading' },
     { name: 'Algo Apps', href: '/algo-apps' },
-    { name: 'Android Apps', href: '/android-apps' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -32,12 +31,12 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-1">
-            {navItems.map((item) => (
+          <div className="hidden md:flex space-x-2">
+            {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted"
+                className="px-4 py-2 text-lg font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent hover:from-secondary hover:via-primary hover:to-accent transition-all duration-300 rounded-lg hover:bg-gradient-elegant hover:shadow-glow transform hover:scale-105"
               >
                 {item.name}
               </Link>
@@ -60,12 +59,12 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-slide-up">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
+            <div className="px-2 pt-2 pb-3 space-y-2 bg-card border-t border-border">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
+                  className="block px-4 py-3 text-lg font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent hover:from-secondary hover:via-primary hover:to-accent transition-all duration-300 rounded-lg hover:bg-muted/50"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

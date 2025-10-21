@@ -10,7 +10,7 @@ const AlgoApps = () => {
       api: "KiteConnect API",
       description: "Fully optimized for the Zerodha platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on Zerodha's platform.",
       features: "What truly sets this software apart is its intelligent automatic connectivity to Zerodha, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
-      downloadLink: "https://drive.google.com/file/d/1V-Fdwtk7QB5sH0YZtqIw-j0Oo044-Y8P/view?usp=drive_link",
+      downloadLink: "https://drive.google.com/file/d/1efdFERf2JKA4_-Mcd1Gyk10qqK5aU8xt/view?usp=drive_link",
       sourceCodeLink: "https://drive.google.com/file/d/1I33_EkXbCcrlKOMpsl3-B4L9hbKofLLu/view?usp=drive_link",
       color: "bg-blue-600"
     },
@@ -19,7 +19,7 @@ const AlgoApps = () => {
       api: "SmartAPI",
       description: "Fully optimized for the Angel One platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on Angel One's platform.",
       features: "What truly sets this software apart is its intelligent automatic connectivity to Angel One & Smart Api, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
-      downloadLink: "https://drive.google.com/file/d/1hdY2r8cO8MaVSohEXlf8vHTLStMCZ8tl/view?usp=drive_link",
+      downloadLink: "https://drive.google.com/file/d/1bm4hGdAmAG3BInKexjImPXt0STz83wlG/view?usp=drive_link",
       sourceCodeLink: "https://drive.google.com/file/d/1nKokU25pQG7SxetuRReZ6CjC5atzyvcZ/view?usp=drive_link",
       color: "bg-green-600"
     },
@@ -28,9 +28,18 @@ const AlgoApps = () => {
       api: "Native API",
       description: "Fully optimized for the Upstox platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on Upstox platform.",
       features: "What truly sets this software apart is its intelligent automatic connectivity to Upstox & its Native Api, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
-      downloadLink: "https://drive.google.com/file/d/1BXqtDVkv60IB_hjV-yAMIZ76gOG2iRph/view?usp=drive_link",
+      downloadLink: "https://drive.google.com/file/d/1TK6iWKHTktEZ_JfPLHaB_nADJqgGo--X/view?usp=drive_link",
       sourceCodeLink: "https://drive.google.com/file/d/1KHtBis5cVgt_KLZ491O_B9CVZCLaJ1RN/view?usp=drive_link",
       color: "bg-purple-600"
+    },
+    {
+      name: "5paisa",
+      api: "Native API",
+      description: "Fully optimized for the 5paisa platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on 5paisa platform.",
+      features: "What truly sets this software apart is its intelligent automatic connectivity to 5paisa & its Native Api, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
+      downloadLink: "https://drive.google.com/file/d/1u3jNQAs4p7EggxMFHFGCXvLm7qovMs51/view?usp=drive_link",
+      sourceCodeLink: "https://drive.google.com/file/d/1KHtBis5cVgt_KLZ491O_B9CVZCLaJ1RN/view?usp=drive_link",
+      color: "bg-orange-600"
     }
   ];
 

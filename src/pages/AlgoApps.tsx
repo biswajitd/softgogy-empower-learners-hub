@@ -10,7 +10,7 @@ const AlgoApps = () => {
       api: "KiteConnect API",
       description: "Fully optimized for the Zerodha platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on Zerodha's platform.",
       features: "What truly sets this software apart is its intelligent automatic connectivity to Zerodha, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
-      downloadLink: "https://drive.google.com/file/d/1efdFERf2JKA4_-Mcd1Gyk10qqK5aU8xt/view?usp=drive_link",
+      downloadLink: "https://drive.google.com/file/d/1EgbsSeZsk4ZSId4eENSEnZe_qpp_Wj5q/view?usp=sharing",
       sourceCodeLink: "https://drive.google.com/file/d/1I33_EkXbCcrlKOMpsl3-B4L9hbKofLLu/view?usp=drive_link",
       color: "bg-blue-600"
     },

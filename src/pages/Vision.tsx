@@ -1,8 +1,44 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Sparkles, Target, Heart, Globe, Users, Lightbulb } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const Vision = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    role: '',
+    interests: '',
+    goals: ''
+  });
+  const { toast } = useToast();
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.role) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+    toast({
+      title: "Thank you for joining!",
+      description: "We'll be in touch soon to help you get started.",
+    });
+    setFormData({ name: '', email: '', role: '', interests: '', goals: '' });
+    setShowForm(false);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -113,13 +149,105 @@ const Vision = () => {
 
           {/* CTA Section */}
           <div className="text-center py-8">
-            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary via-accent to-secondary rounded-full shadow-glow">
-              <Users className="w-6 h-6 text-white" />
-              <span className="text-white text-lg font-semibold">
-                Join us in making a difference
-              </span>
-            </div>
+            <Button
+              onClick={() => setShowForm(!showForm)}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary via-accent to-secondary rounded-full shadow-glow text-white text-lg font-semibold hover:opacity-90 transition-opacity"
+            >
+              <Users className="w-6 h-6" />
+              Join us in making a difference
+            </Button>
           </div>
+
+          {/* Join Community Form */}
+          {showForm && (
+            <Card className="p-8 md:p-12 bg-card/80 backdrop-blur-sm border-primary/20 shadow-elegant animate-fade-in">
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+                  Join Our Community
+                </h2>
+                <p className="text-muted-foreground">
+                  Be part of a movement that's transforming lives through education and mentorship.
+                </p>
+              </div>
+
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label>I want to join as: *</Label>
+                  <RadioGroup
+                    value={formData.role}
+                    onValueChange={(value) => setFormData({ ...formData, role: value })}
+                    required
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="student" id="student" />
+                      <Label htmlFor="student" className="font-normal cursor-pointer">Student (seeking mentorship)</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="mentor" id="mentor" />
+                      <Label htmlFor="mentor" className="font-normal cursor-pointer">Mentor (offering guidance)</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="volunteer" id="volunteer" />
+                      <Label htmlFor="volunteer" className="font-normal cursor-pointer">Volunteer (support & contribute)</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="interests">Areas of Interest</Label>
+                  <Input
+                    id="interests"
+                    value={formData.interests}
+                    onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
+                    placeholder="e.g., Engineering, Programming, Career Guidance"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="goals">What are you hoping to achieve?</Label>
+                  <Textarea
+                    id="goals"
+                    value={formData.goals}
+                    onChange={(e) => setFormData({ ...formData, goals: e.target.value })}
+                    placeholder="Share your goals or how you'd like to contribute..."
+                    className="min-h-[120px]"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-primary via-accent to-secondary text-white font-semibold py-6 text-lg hover:opacity-90 transition-opacity"
+                >
+                  Join Community Now
+                </Button>
+              </form>
+            </Card>
+          )}
         </div>
       </main>
 

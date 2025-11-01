@@ -20,6 +20,7 @@ import AndroidDevelopment from "./pages/AndroidDevelopment";
 import AndroidProjects from "./pages/AndroidProjects";
 import SyllabusDownload from "./pages/SyllabusDownload";
 import AlgoApps from "./pages/AlgoApps";
+import Vision from "./pages/Vision";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/vision" element={<Vision />} />
           <Route path="/engineering" element={<Engineering />} />
           <Route path="/software-development" element={<SoftwareDevelopment />} />
             <Route path="/trading" element={<Trading />} />

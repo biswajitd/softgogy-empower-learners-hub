@@ -15,6 +15,15 @@ const AlgoApps = () => {
       color: "bg-blue-600"
     },
     {
+      name: "Groww",
+      api: "Groww API",
+      description: "Fully optimized for the Groww platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on Groww's platform.",
+      features: "What truly sets this software apart is its intelligent automatic connectivity to Groww, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
+      downloadLink: "https://drive.google.com/file/d/1SlySWtQpdi9bb1PmosjJCR_EPC3CSiDW/view?usp=drive_link",
+      sourceCodeLink: "https://drive.google.com/file/d/1I33_EkXbCcrlKOMpsl3-B4L9hbKofLLu/view",
+      color: "bg-teal-600"
+    },
+    {
       name: "Angel One",
       api: "SmartAPI",
       description: "Fully optimized for the Angel One platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on Angel One's platform.",

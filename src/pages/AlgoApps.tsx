@@ -46,7 +46,7 @@ const AlgoApps = () => {
       api: "Native API",
       description: "Fully optimized for the 5paisa platform, this Algo Trading Software stands out by offering smooth and hassle-free integration— to run algo strategies on 5paisa platform.",
       features: "What truly sets this software apart is its intelligent automatic connectivity to 5paisa & its Native Api, eliminating the need for tedious two-way verifications. It effortlessly executes your preferred options, saving your time and significantly boosting your trading profitability.",
-      downloadLink: "https://drive.google.com/file/d/10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-/view?usp=sharing",
+      downloadLink: "https://drive.google.com/file/d/18QA6cqKaFQKXGdj0UkJzd9Wk3eIfwhLC/view?usp=drive_link",
       sourceCodeLink: "https://drive.google.com/file/d/1KHtBis5cVgt_KLZ491O_B9CVZCLaJ1RN/view?usp=drive_link",
       color: "bg-orange-600"
     }

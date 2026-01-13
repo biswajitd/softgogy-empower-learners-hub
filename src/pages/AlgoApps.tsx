@@ -6,32 +6,27 @@ const AlgoApps = () => {
   const platforms = [
     {
       name: "Zerodha",
-      downloadLink:
-        "https://drive.google.com/file/d/1iZU2_OvjgIiw6Nac40Z_KrEdbWkdBO3v/view",
+      downloadLink: "https://drive.google.com/open?id=1iZU2_OvjgIiw6Nac40Z_KrEdbWkdBO3v",
       color: "bg-blue-600",
     },
     {
       name: "Groww",
-      downloadLink:
-        "https://drive.google.com/file/d/1f2og8N3qV9UfQcljQa_GkrdE6XovwezL/view",
+      downloadLink: "https://drive.google.com/open?id=1f2og8N3qV9UfQcljQa_GkrdE6XovwezL",
       color: "bg-teal-600",
     },
     {
       name: "Angel One",
-      downloadLink:
-        "https://drive.google.com/file/d/1SY0DnDYr_sF2O0T8AFARUXv-qQ0tOxtu/view",
+      downloadLink: "https://drive.google.com/open?id=1SY0DnDYr_sF2O0T8AFARUXv-qQ0tOxtu",
       color: "bg-green-600",
     },
     {
       name: "Upstox",
-      downloadLink:
-        "https://drive.google.com/file/d/10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-/view",
+      downloadLink: "https://drive.google.com/open?id=10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-",
       color: "bg-purple-600",
     },
     {
       name: "5paisa",
-      downloadLink:
-        "https://drive.google.com/file/d/18QA6cqKaFQKXGdj0UkJzd9Wk3eIfwhLC/view",
+      downloadLink: "https://drive.google.com/open?id=18QA6cqKaFQKXGdj0UkJzd9Wk3eIfwhLC",
       color: "bg-orange-600",
     },
   ];
@@ -39,20 +34,20 @@ const AlgoApps = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-10">
-        {platforms.map((platform) => (
-          <Card key={platform.name} className="mb-6">
+        {platforms.map((p) => (
+          <Card key={p.name} className="mb-6">
             <CardHeader>
-              <CardTitle>{platform.name}</CardTitle>
+              <CardTitle>{p.name}</CardTitle>
             </CardHeader>
             <CardContent>
               <a
-                href={platform.downloadLink}
+                href={p.downloadLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className={`${platform.color} text-white`}>
+                <Button className={`${p.color} text-white`}>
                   <Download className="mr-2 h-4 w-4" />
-                  DOWNLOAD {platform.name.toUpperCase()} ALGO WITH FULL FEATURES
+                  DOWNLOAD {p.name.toUpperCase()} ALGO WITH FULL FEATURES
                 </Button>
               </a>
             </CardContent>

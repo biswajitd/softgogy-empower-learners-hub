@@ -6,57 +6,32 @@ const AlgoApps = () => {
   const platforms = [
     {
       name: "Zerodha",
-      api: "KiteConnect API",
-      description:
-        "Fully optimized for the Zerodha platform, this Algo Trading Software stands out by offering smooth and hassle-free integration to run algo strategies on Zerodha.",
-      features:
-        "Automatic connectivity to Zerodha eliminates two-way verification and boosts trading efficiency.",
       downloadLink:
-        "https://drive.google.com/uc?export=download&id=1iZU2_OvjgIiw6Nac40Z_KrEdbWkdBO3v",
+        "https://drive.google.com/file/d/1iZU2_OvjgIiw6Nac40Z_KrEdbWkdBO3v/view",
       color: "bg-blue-600",
     },
     {
       name: "Groww",
-      api: "Groww API",
-      description:
-        "Fully optimized for the Groww platform with smooth integration to run algo strategies.",
-      features:
-        "Automatic connectivity to Groww removes manual steps and improves performance.",
       downloadLink:
-        "https://drive.google.com/uc?export=download&id=1f2og8N3qV9UfQcljQa_GkrdE6XovwezL",
+        "https://drive.google.com/file/d/1f2og8N3qV9UfQcljQa_GkrdE6XovwezL/view",
       color: "bg-teal-600",
     },
     {
       name: "Angel One",
-      api: "SmartAPI",
-      description:
-        "Fully optimized for the Angel One platform to run algo strategies seamlessly.",
-      features:
-        "Direct SmartAPI connectivity avoids repeated authentication.",
       downloadLink:
-        "https://drive.google.com/uc?export=download&id=1SY0DnDYr_sF2O0T8AFARUXv-qQ0tOxtu",
+        "https://drive.google.com/file/d/1SY0DnDYr_sF2O0T8AFARUXv-qQ0tOxtu/view",
       color: "bg-green-600",
     },
     {
       name: "Upstox",
-      api: "Native API",
-      description:
-        "Fully optimized for the Upstox platform with native API integration.",
-      features:
-        "Automatic Upstox connectivity eliminates manual verification.",
       downloadLink:
-        "https://drive.google.com/uc?export=download&id=10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-",
+        "https://drive.google.com/file/d/10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-/view",
       color: "bg-purple-600",
     },
     {
       name: "5paisa",
-      api: "Native API",
-      description:
-        "Fully optimized for the 5paisa platform to execute algo strategies efficiently.",
-      features:
-        "Native API connectivity ensures fast and reliable order execution.",
       downloadLink:
-        "https://drive.google.com/uc?export=download&id=18QA6cqKaFQKXGdj0UkJzd9Wk3eIfwhLC",
+        "https://drive.google.com/file/d/18QA6cqKaFQKXGdj0UkJzd9Wk3eIfwhLC/view",
       color: "bg-orange-600",
     },
   ];
@@ -69,13 +44,7 @@ const AlgoApps = () => {
             <CardHeader>
               <CardTitle>{platform.name}</CardTitle>
             </CardHeader>
-
             <CardContent>
-              <p className="mb-3">{platform.description}</p>
-              <p className="mb-5 text-muted-foreground">
-                {platform.features}
-              </p>
-
               <a
                 href={platform.downloadLink}
                 target="_blank"

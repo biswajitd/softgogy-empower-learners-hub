@@ -16,17 +16,17 @@ const AlgoApps = () => {
     },
     {
       name: "Angel One",
-      downloadLink: "https://drive.google.com/open?id=1SY0DnDYr_sF2O0T8AFARUXv-qQ0tOxtu",
+      downloadLink: "https://drive.google.com/file/d/1f2og8N3qV9UfQcljQa_GkrdE6XovwezL/view?usp=sharing",
       color: "bg-green-600",
     },
     {
       name: "Upstox",
-      downloadLink: "https://drive.google.com/open?id=10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-",
+      downloadLink: "https://drive.google.com/file/d/1SY0DnDYr_sF2O0T8AFARUXv-qQ0tOxtu/view?usp=sharing",
       color: "bg-purple-600",
     },
     {
       name: "5paisa",
-      downloadLink: "https://drive.google.com/open?id=18QA6cqKaFQKXGdj0UkJzd9Wk3eIfwhLC",
+      downloadLink: "https://drive.google.com/file/d/10EWWW5OoDqa653Neo1gCVYwqhHfXYaI-/view?usp=sharing",
       color: "bg-orange-600",
     },
   ];

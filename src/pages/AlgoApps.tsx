@@ -43,16 +43,22 @@ const AlgoApps = () => {
               <CardTitle>{p.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <a
-                href={p.downloadLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className={`${p.color} text-white`}>
+              <Button asChild className={`${p.color} text-white`}>
+                <a
+                  href={p.downloadLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    // In some embedded previews (iframes), Google Drive refuses to render.
+                    // Forcing a real new tab avoids ERR_BLOCKED_BY_RESPONSE.
+                    e.preventDefault();
+                    window.open(p.downloadLink, "_blank", "noopener,noreferrer");
+                  }}
+                >
                   <Download className="mr-2 h-4 w-4" />
                   DOWNLOAD {p.name.toUpperCase()} ALGO WITH FULL FEATURES
-                </Button>
-              </a>
+                </a>
+              </Button>
             </CardContent>
           </Card>
         ))}
